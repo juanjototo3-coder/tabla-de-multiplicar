@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla de multiplicar</title>
+<style>
+body{
+    margin:0;
+    padding:10px;
+    background:blue;
+    color:white;
+    font-family:"Times New Roman",serif;
+    text-align:center
+}
+h1{
+    font-size:42px;
+    margin:0 0 30px
+}
+.contenedor{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px
+}
+.tabla{
+    background:black;
+    border:4px solid white;
+    width:170px;
+    padding:5px;
+    box-sizing:border-box;
+    font-size:23px;
+    line-height:1.35
+}
+@media(
+    max-width:600px
+    ){
+        h1{
+            font-size:32px
+            }
+            .tabla{
+                width:145px;
+                font-size:20px
+                }
+                }
+</style>
+</head>
+<body>
+<h1>Tabla de multiplicar</h1>
+<div class="contenedor" id="contenedor"></div>
+<script>
+const contenedor = document.getElementById("contenedor");
+for (let i = 1; i <= 10; i++) {
+  const tabla = document.createElement("div");
+  tabla.className = "tabla";
+  for (let j = 1; j <= 10; j++) {
+    tabla.innerHTML += `${i} x ${j} = ${i * j}<br>`;
+  }
+  contenedor.appendChild(tabla);
+}
+</script>
+</body>
+</html>
